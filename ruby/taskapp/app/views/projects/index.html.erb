@@ -1,0 +1,16 @@
+<h1>Projects</h1>
+
+<ul>
+	<% @projects.each do |project| %>
+	<li>
+		<%= link_to project.title, project_path(project.id) %> (<%= project.tasks.unfinished.count %>/<%= project.tasks.count %>)
+		<%= link_to "[Edit]", edit_project_path(project.id) %>
+
+		<!-- :delete で #destroy にひもづける -->
+		<%= link_to "[Destory]", project_path(project.id), method: :delete, data: { confirm: "are you sure?"} %>
+	</li>
+	<% end %>
+</ul>
+
+<!-- 新規作成 -->
+<p><%= link_to "Add New", new_project_path %></p>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Taskapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= image_tag "logo_test.jpg" %>
+
+<%= yield %>
+
+<!-- ホームへのリンク -->
+<%= link_to "Home", "/" %>
+<%= link_to "Home_path", projects_path %>
+
+</body>
+</html>
